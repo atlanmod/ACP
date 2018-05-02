@@ -1,0 +1,350 @@
+# avec 47+11 rules
+-------------- nb rule= 1
+ => unsat
+ <= unsat
+safe= 1 unsafe= 0 time= 0.03239000000000003
+-------------- nb rule= 2
+ => unsat
+ <= unsat
+safe= 0 unsafe= 3 time= 0.09195399999999998
+-------------- nb rule= 3
+ => unsat
+ <= unsat
+safe= 0 unsafe= 4 time= 0.11709899999999995
+-------------- nb rule= 4
+ => unsat
+ <= unsat
+safe= 0 unsafe= 5 time= 0.13227600000000006
+-------------- nb rule= 5
+ => unsat
+ <= unsat
+safe= 0 unsafe= 6 time= 0.160837
+-------------- nb rule= 6
+ => unsat
+ <= unsat
+safe= 0 unsafe= 7 time= 0.17962099999999992
+-------------- nb rule= 7
+ => unsat
+ <= unsat
+safe= 0 unsafe= 8 time= 0.21845900000000018
+-------------- nb rule= 8
+ => unsat
+ <= unsat
+safe= 0 unsafe= 9 time= 0.23965499999999995
+-------------- nb rule= 9
+ => unsat
+ <= unsat
+safe= 0 unsafe= 10 time= 0.28187000000000006
+-------------- nb rule= 10
+ => unsat
+ <= unsat
+safe= 0 unsafe= 11 time= 0.32817700000000016
+-------------- nb rule= 11
+ => unsat
+ <= unsat
+safe= 0 unsafe= 12 time= 0.3377880000000002
+-------------- nb rule= 12
+ => unsat
+ <= unsat
+safe= 1 unsafe= 12 time= 0.41389999999999993
+-------------- nb rule= 13
+ => unsat
+ <= unsat
+safe= 3 unsafe= 12 time= 0.41564999999999985
+-------------- nb rule= 14
+ => unsat
+ <= unsat
+safe= 3 unsafe= 16 time= 0.5770249999999999
+-------------- nb rule= 15
+ => unsat
+ <= unsat
+safe= 3 unsafe= 18 time= 0.74756
+-------------- nb rule= 16
+ => unsat
+ <= unsat
+safe= 4 unsafe= 19 time= 0.9254879999999996
+-------------- nb rule= 17
+ => unsat
+ <= unsat
+safe= 6 unsafe= 20 time= 1.0833110000000001
+-------------- nb rule= 18
+ => unsat
+ <= unsat
+safe= 11 unsafe= 22 time= 1.525577000000001
+-------------- nb rule= 19
+ => unsat
+ <= unsat
+safe= 17 unsafe= 23 time= 1.8908590000000007
+-------------- nb rule= 20
+ => unsat
+ <= unsat
+safe= 17 unsafe= 26 time= 2.432791999999999
+-------------- nb rule= 21
+ => unsat
+ <= unsat
+safe= 17 unsafe= 32 time= 3.2107899999999994
+-------------- nb rule= 22
+ => unsat
+ <= unsat
+safe= 17 unsafe= 32 time= 3.5278670000000023
+-------------- nb rule= 23
+ => unsat
+ <= unsat
+safe= 17 unsafe= 43 time= 4.214043
+-------------- nb rule= 24
+ => unsat
+ <= unsat
+safe= 21 unsafe= 44 time= 4.392036999999998
+-------------- nb rule= 25
+ => unsat
+ <= unsat
+safe= 21 unsafe= 55 time= 5.278497999999999
+-------------- nb rule= 26
+ => unsat
+ <= unsat
+safe= 29 unsafe= 56 time= 6.094940999999999
+-------------- nb rule= 27
+ => unsat
+ <= unsat
+safe= 29 unsafe= 67 time= 6.943706999999996
+-------------- nb rule= 28
+ => unsat
+ <= unsat
+safe= 29 unsafe= 84 time= 8.253439999999998
+-------------- nb rule= 29
+ => unsat
+ <= unsat
+safe= 30 unsafe= 102 time= 9.129804999999998
+-------------- nb rule= 30
+ => unsat
+ <= unsat
+safe= 31 unsafe= 104 time= 10.14595
+-------------- nb rule= 31
+ => unsat
+ <= unsat
+safe= 55 unsafe= 106 time= 12.867452999999998
+-------------- nb rule= 32
+ => unsat
+ <= unsat
+safe= 43 unsafe= 124 time= 15.265501
+-------------- nb rule= 33
+ => unsat
+ <= unsat
+safe= 45 unsafe= 126 time= 15.784939999999992
+-------------- nb rule= 34
+ => unsat
+ <= unsat
+safe= 46 unsafe= 145 time= 17.764094000000014
+-------------- nb rule= 35
+ => unsat
+ <= unsat
+safe= 74 unsafe= 148 time= 19.24346399999999
+-------------- nb rule= 36
+ => unsat
+ <= unsat
+safe= 47 unsafe= 206 time= 20.567262
+-------------- nb rule= 37
+ => unsat
+ <= unsat
+safe= 85 unsafe= 210 time= 22.603245999999984
+-------------- nb rule= 38
+ => unsat
+ <= unsat
+safe= 87 unsafe= 211 time= 25.412713999999994
+-------------- nb rule= 39
+ => unsat
+ <= unsat
+safe= 87 unsafe= 250 time= 28.61609200000001
+-------------- nb rule= 40
+ => unsat
+ <= unsat
+safe= 87 unsafe= 292 time= 32.154673
+-------------- nb rule= 41
+ => unsat
+ <= unsat
+safe= 143 unsafe= 295 time= 35.911181000000056
+-------------- nb rule= 42
+ => unsat
+ <= unsat
+safe= 255 unsafe= 298 time= 42.30233300000003
+-------------- nb rule= 43
+ => unsat
+ <= unsat
+safe= 145 unsafe= 472 time= 51.46916900000002
+-------------- nb rule= 44
+ => unsat
+ <= unsat
+safe= 145 unsafe= 514 time= 56.88829399999997
+-------------- nb rule= 45
+ => unsat
+ <= unsat
+safe= 151 unsafe= 574 time= 62.840283
+-------------- nb rule= 46
+ => unsat
+ <= unsat
+safe= 151 unsafe= 574 time= 67.83693299999993
+-------------- nb rule= 47
+ => unsat
+ <= unsat
+safe= 163 unsafe= 688 time= 75.42994599999997
+-------------- nb rule= 48
+ => unsat
+ <= unsat
+safe= 201 unsafe= 689 time= 81.065831
+-------------- nb rule= 49
+ => unsat
+ <= unsat
+safe= 273 unsafe= 694 time= 89.60266000000001
+-------------- nb rule= 50
+ => unsat
+ <= unsat
+safe= 163 unsafe= 843 time= 101.22065600000008
+-------------- nb rule= 51
+ => unsat
+ <= unsat
+safe= 175 unsafe= 912 time= 105.98974599999997
+-------------- nb rule= 52
+ => unsat
+ <= unsat
+safe= 287 unsafe= 919 time= 114.22326099999987
+-------------- nb rule= 53
+ => unsat
+ <= unsat
+safe= 325 unsafe= 920 time= 124.70764799999984
+-------------- nb rule= 54
+ => unsat
+ <= unsat
+safe= 325 unsafe= 1075 time= 138.73421400000007
+-------------- nb rule= 55
+ => unsat
+ <= unsat
+safe= 327 unsafe= 1093 time= 150.90690299999983
+-------------- nb rule= 56
+ => unsat
+ <= unsat
+safe= 333 unsafe= 1242 time= 165.4534779999999
+-------------- nb rule= 57
+ => unsat
+ <= unsat
+safe= 333 unsafe= 1323 time= 181.12583500000005
+-------------- nb rule= 58
+ => unsat
+ <= unsat
+safe= 557 unsafe= 1341 time= 195.84899300000006
+
+#### ===========================
+# seulement les 47 business
+-------------- nb rule= 1
+ => unsat
+ <= unsat
+safe= 1 unsafe= 0 time= 0.029349999999999987
+-------------- nb rule= 2
+ => unsat
+ <= unsat
+safe= 3 unsafe= 0 time= 0.09204299999999999
+-------------- nb rule= 3
+ => unsat
+ <= unsat
+safe= 3 unsafe= 4 time= 0.20602099999999995
+-------------- nb rule= 4
+ => unsat
+ <= unsat
+safe= 4 unsafe= 5 time= 0.36526000000000003
+-------------- nb rule= 5
+ => unsat
+ <= unsat
+safe= 6 unsafe= 6 time= 0.49554699999999996
+-------------- nb rule= 6
+ => unsat
+ <= unsat
+safe= 10 unsafe= 7 time= 0.6567569999999998
+-------------- nb rule= 7
+ => unsat
+ <= unsat
+safe= 19 unsafe= 9 time= 1.1397750000000002
+-------------- nb rule= 8
+ => unsat
+ <= unsat
+safe= 29 unsafe= 10 time= 1.9303590000000002
+-------------- nb rule= 9
+ => unsat
+ <= unsat
+safe= 37 unsafe= 11 time= 2.75354
+-------------- nb rule= 10
+ => unsat
+ <= unsat
+safe= 37 unsafe= 23 time= 3.9782600000000006
+-------------- nb rule= 11
+ => unsat
+ <= unsat
+safe= 37 unsafe= 23 time= 5.315245000000001
+-------------- nb rule= 12
+ => unsat
+ <= unsat
+safe= 59 unsafe= 24 time= 6.107975
+-------------- nb rule= 13
+ => unsat
+ <= unsat
+safe= 71 unsafe= 25 time= 7.944572999999998
+-------------- nb rule= 14
+ => unsat
+ <= unsat
+safe= 121 unsafe= 26 time= 10.583323000000004
+-------------- nb rule= 15
+ => unsat
+ <= unsat
+safe= 139 unsafe= 27 time= 14.810666999999995
+-------------- nb rule= 16
+ => unsat
+ <= unsat
+safe= 245 unsafe= 28 time= 19.380849999999995
+-------------- nb rule= 17
+ => unsat
+ <= unsat
+safe= 275 unsafe= 29 time= 26.606176000000005
+-------------- nb rule= 18
+ => unsat
+ <= unsat
+safe= 369 unsafe= 30 time= 36.878279000000006
+-------------- nb rule= 19
+ => unsat
+ <= unsat
+safe= 551 unsafe= 31 time= 53.420715
+-------------- nb rule= 20
+ => unsat
+ <= unsat
+safe= 979 unsafe= 32 time= 72.06755400000003
+-------------- nb rule= 21
+ => unsat
+ <= unsat
+safe= 739 unsafe= 282 time= 94.51548200000002
+-------------- nb rule= 22
+ => unsat
+ <= unsat
+safe= 891 unsafe= 283 time= 116.30297000000002
+-------------- nb rule= 23
+ => unsat
+ <= unsat
+safe= 1621 unsafe= 284 time= 152.092556
+-------------- nb rule= 24
+ => unsat
+ <= unsat
+safe= 2279 unsafe= 285 time= 220.507434
+-------------- nb rule= 25
+ => unsat
+ <= unsat
+safe= 2479 unsafe= 286 time= 284.48339299999986
+-------------- nb rule= 26
+ => unsat
+ <= unsat
+safe= 4939 unsafe= 287 time= 393.06095200000004
+-------------- nb rule= 27
+ => unsat
+ <= unsat
+safe= 6275 unsafe= 288 time= 560.7331990000002
+-------------- nb rule= 28
+ => unsat
+ <= unsat
+safe= 11165 unsafe= 289 time= 952.178058
+-------------- nb rule= 29
+

@@ -1,0 +1,66 @@
+# enumerative with 11 disjuncts
+-------------- nb rule= 1
+ => unsat
+ <= unsat
+safe= 1 time= 0.043330000000000035
+-------------- nb rule= 2
+ => unsat
+ <= unsat
+safe= 3 time= 0.05769300000000005
+-------------- nb rule= 3
+ => unsat
+ <= unsat
+safe= 7 time= 0.09784500000000007
+-------------- nb rule= 4
+ => unsat
+ <= unsat
+safe= 8 time= 0.16518700000000008
+-------------- nb rule= 5
+ => unsat
+ <= unsat
+safe= 10 time= 0.29770700000000005
+-------------- nb rule= 6
+ => unsat
+ <= unsat
+safe= 21 time= 0.559338
+-------------- nb rule= 7
+ => unsat
+ <= unsat
+safe= 43 time= 1.1016519999999999
+-------------- nb rule= 8
+ => unsat
+ <= unsat
+safe= 87 time= 2.1921959999999996
+-------------- nb rule= 9
+ => unsat
+ <= unsat
+safe= 98 time= 4.267332
+-------------- nb rule= 10
+ => unsat
+ <= unsat
+safe= 120 time= 8.617973
+-------------- nb rule= 11
+ => unsat
+ <= unsat
+safe= 131 time= 17.732055999999996
+-------------- nb rule= 12
+ => unsat
+ <= unsat
+safe= 143 time= 35.1242
+-------------- nb rule= 13
+ => unsat
+ <= unsat
+safe= 287 time= 73.269134
+-------------- nb rule= 14
+ => unsat
+ <= unsat
+safe= 310 time= 149.43705599999998
+-------------- nb rule= 15
+ => unsat
+ <= unsat
+safe= 518 time= 277.55893599999996
+-------------- nb rule= 16
+ => unsat
+ <= unsat
+safe= 596 time= 564.0523079999999
+-------------- nb rule= 17
