@@ -1,6 +1,6 @@
 # ------------------
 # 16/4/2018
-# simple rule
+# simple rule which are NOT UNSAFE
 # -------------------
 
 from z3 import * #@UnusedWildImport

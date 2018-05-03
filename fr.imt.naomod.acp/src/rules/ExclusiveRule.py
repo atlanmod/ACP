@@ -31,7 +31,6 @@ class ExclusiveRule(Rule):
     # --- end get_binary
     
     # --------------------
-    # TODO erreurs ?
     # return an BoolRef
     def get_cond(self):
         if (isinstance(self.cond, bool)):
@@ -46,7 +45,7 @@ class ExclusiveRule(Rule):
             else:
                 return And(*self.cond)
         else:
-            print ("Rule.get_cond: erreur syntaxe!" )
+            print ("Rule.get_cond: syntactic error!" )
     # --- end get_cond
     
     # --------------------

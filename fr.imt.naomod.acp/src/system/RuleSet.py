@@ -5,13 +5,10 @@
 
 from z3 import * #@UnusedWildImport
 from Rule import * #@UnusedWildImport
-#from partition import * #@UnusedWildImport
-#from measure import * #@UnusedWildImport
-#from functools import *  #@UnusedWildImport
 
 # ---------------------
 # self.variables: universally quantified
-# TODO ajouter aussi les skolem explicites !!!!
+# TODO add skolem  !!!!
 class RuleSet():
     
     # by default it is True

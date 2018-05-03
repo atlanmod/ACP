@@ -3,7 +3,7 @@
 # Iterative method
 # remove obvious tautologies and separate unsafe  from safe
 # -------------------
-#from z3.z3util import * #@UnusedWildImport
+
 from Enumerative import  * #@UnusedWildImport
 from Unsafe import *  #@UnusedWildImport
 from Safe import *  #@UnusedWildImport

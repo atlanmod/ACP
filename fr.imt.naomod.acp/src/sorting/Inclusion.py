@@ -2,8 +2,6 @@
 # 17/4/2018
 # Simple graph to topological sorting
 # -------------------
-# TODO impact des sans inclusions plutot à la fin ?
-# faire le tri uniquement sur les relations ?
 
 # ------ 
 # Should store all the inclusions relations 

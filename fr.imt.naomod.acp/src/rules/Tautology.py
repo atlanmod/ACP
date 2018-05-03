@@ -1,6 +1,6 @@
 # ------------------
 # 16/4/2018
-# tautaology rule
+# tautaology rule NOT USED 
 # -------------------
 
 from z3 import * #@UnusedWildImport

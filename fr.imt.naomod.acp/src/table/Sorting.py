@@ -171,7 +171,6 @@ class Sorting(Iterative):
         #print ("graph " + str(G))
         G.sort()
         #print ("graph " + str(G))
-        # TODO modif des sans relations possible ici on pourrait aussi separer les sans relations
         # reset sorted and inclusions relations
         self.sorted = [0]*size
         for i in range(0, size):
