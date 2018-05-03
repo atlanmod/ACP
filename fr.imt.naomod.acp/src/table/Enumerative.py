@@ -23,6 +23,7 @@ class Enumerative(RuleSet):
         self.exclusive = []
         # local solvers
         self.solver = Solver()
+        self.solver.set(timeout=1000) # 1s
         # to store non tautology
         self.correct = []
     # --- end init

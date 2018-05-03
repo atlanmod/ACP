@@ -20,6 +20,7 @@ class Iterative(Enumerative):
         super().__init__()
         # local solver
         self.solver = Solver()
+        self.solver.set(timeout=1000) # 1s
         # store safe cases
         self.safe = []
         # separate unsafe cases 

@@ -44,9 +44,6 @@ table.add_rule(chief(h), pread(h, p))
 # 5: 
 table.add_rule(And(nurse(h), Not(sameward(h, p))), Not(pread(h, p)))
 
-### with that And(doctor(h), nurse(h)) => false 
-## table.add_rule(And(doctor(h), nurse(h)), False)
-
 #### =======================
 table.compute_table(table.number_rule())
 table.check()
