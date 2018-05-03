@@ -8,7 +8,6 @@ from Enumerative import  * #@UnusedWildImport
 from Unsafe import *  #@UnusedWildImport
 from Safe import *  #@UnusedWildImport
 from math import * #@UnusedWildImport
-from quine import * #@UnusedWildImport
 
 # --------------------------
 # Class for Iterative method inheriting Enumerative
@@ -37,7 +36,7 @@ class Iterative(Enumerative):
     # --------------------
     def __str__(self):
         result = super().__str__()
-        result += " ----------- Safe -------------- \n"
+        result += " ----------- Not unsafe -------------- \n"
         for er in self.safe:
             result += str(er) + "\n"
         result += " ----------- Unsafe -------------- \n"
@@ -330,46 +329,5 @@ class Iterative(Enumerative):
             csvfile.close()
     # ----- end of perf
     
-    # -------------------
-    # call Quine on unsafe and return a BoolRef
-    # but need to complete the binaries
-    # TODO lack 1-undefined ?
-    def quine(self):
-        # number of correct rules
-        n = len(self.correct)
-        # to cope with dont'care 
-        listbin = list(map(lambda x: x.get_binary(), self.unsafe))
-        tmp = []
-        for l in listbin:
-            tmp += expand(l)
-        #print("quine listbin " + str(tmp))
-        #  complete binary with 0/1
-        # TODO to optimize
-        allmins = []
-        for l in tmp:
-            nb = (n - len(l))
-            if (nb > 0):
-                allmins += complete(nb, l)
-            else:
-                allmins.append(l)
-        # --- for l
-        #print ("allmins " + str(allmins))
-        #if allmins
-        if (allmins):
-            listbin = quine(n, allmins)
-            res = []
-            for binary in listbin:
-                res.append(And(*self.rebuildCond(binary))) #TODO here
-            if (len(res) == 0):
-                res = True
-            elif (len(res) == 1):
-                res = res[0]
-            else:
-                res = Or(*res)
-            # ---
-            print ("Quine= " + str(res))
-            print ("+tactic= " + str(tactic(res)))
-        # -- 
-    # --- end of quine
-    
+ 
 # --- end class 

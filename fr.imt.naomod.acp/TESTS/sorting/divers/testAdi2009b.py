@@ -1,6 +1,7 @@
 # -------------------
-# 230/4/2018
-# Test Adi2009 
+# 3/5/2018
+# Test Adi2009b
+### exemple in motivation
 # -------------------
 
 from Sorting import * #@UnusedWildImport
@@ -47,12 +48,8 @@ table.add_rule(And(nurse(h), Not(sameward(h, p))), Not(pread(h, p)))
 ## table.add_rule(And(doctor(h), nurse(h)), False)
 
 #### =======================
-table.compute_table(6)
+table.compute_table(table.number_rule())
 table.check()
 print ("rules= " + str(len(table.correct)) + " safe= " + str(len(table.safe)) + " unsafe= " + str(len(table.unsafe)))
 print (str(table))
-# print(str(table.tspass(table.rules)))
-# print(str(table.tspass(table.safe)))
-# print(str(table.tspass(table.unsafe)))
-#table.quine()
-#table.perf("test")
+

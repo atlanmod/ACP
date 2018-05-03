@@ -33,15 +33,6 @@ tsunami = Const('tsunami', Topic)
 military = Const('military', Topic)
 TWC = Const('TWC', Person)
 
-# (![a1, a2, i] ~(Psend(a1, a2, i) & Fsend(a1, a2, i)))
-# %% %%% a
-# %% ![a, i] ((topic(i, tsunami) & know(a, i)) => Osend(a, TWC, i))
-# %%% b
-# (![s, r, i] ((topic(i, military) & know(s, i) & ~same(s, r)) => Fsend(s, r, i)))
-# %%% r
-# %% ![i] ?[t] topic(i, t)
-# %%% c
-# (![s, r, i] ((topic(i, tsunami) & know(s, i) & ~same(s, r)) => Psend(s, r, i)))
 # exclusive 
 table.add_rule(And(Psend(s, r, i), Fsend(s, r, i)), False)
 #table.add_rule(And(topic(i, tsunami), know(s, i)), Osend(s, TWC, i))
@@ -53,5 +44,5 @@ table.compute_table(3)
 table.check()
 print ("rules= " + str(len(table.correct)) + " safe= " + str(len(table.safe)) + " unsafe= " + str(len(table.unsafe)))
 print (str(table))
-table.quine()
+
 

@@ -51,11 +51,11 @@ table.add_rule(And(nurse(h), Not(sameward(h, p))), Not(pread(h, p)))
 
 # # 
 start = time()
-table.compute()
+table.compute_table(8)
 table.check() # 
 #table.checkExclu()
 #table.checkSingleExclu()
 print ("time= " + str(time()-start))
-print ("safe= " + str(len(table.exclusive)))
-print ("Table: " + str(table))
+print ("Exclusive= " + str(len(table.exclusive)))
+#print ("Table: " + str(table))
 

@@ -1,6 +1,7 @@
 # -------------------
 # 2/5/2018
-# CONTINUE A from test.tspass
+# CONTINUE A from TODP
+### examples in evaluation
 # -------------------
 
 from Sorting import * #@UnusedWildImport
@@ -183,98 +184,18 @@ table.add_rule(And(MeetingFlag(R), pcchair(X)), And(Pread(X, R), Pwrite(X, R)))
 # (![X, R] ((MeetingFlag(R) & pcmember(X)) => Pread(X, R)))
 table.add_rule(And(MeetingFlag(R), pcmember(X)), Pread(X, R))
 
-# table.computeTable2(46, True)
-# table.check() # TODO refaire 1a1 avec les autres tests
-# # print (str(table.size()) + " safe= " + str(len(table.exclusive)) + " unsafe= " + str(len(table.unsafe)) + " time= " + str((clock()-start))) 
-
 start = clock()
 table.compute_table(47)
-#table.compute_table(48)
-#table.compute_table(57)
 table.check() # 
 #table.checkExclu()
 #table.checkSingleExclu()
 print (str(len(table.rules)) + " safe= " + str(len(table.safe)) + " unsafe= " + str(len(table.unsafe)) + " time= " + str((clock()-start))) 
-print ("obvious= " + str(table.obvious))
 # print (str(table))
-# ##### ======== sans les disjunct 47
-# inclusions {0: [], 1: [], 2: [], 3: [1], 4: [2], 5: [2], 6: [2, 5], 7: [2, 5, 6], 8: [2, 4, 5], 9: [2, 4, 5, 8], 10: [], 11: [10], 12: [10, 11], 13: [], 14: [13], 15: [13, 14], 16: [13, 14, 15], 17: [], 18: [17], 19: [17, 18], 20: [17, 18, 19], 21: [17, 18, 19, 20], 22: [17, 18, 19, 20, 21], 23: [17, 18, 19, 20, 21, 22], 24: [17, 18, 19, 20, 21, 22, 23], 25: [17, 18, 19, 20, 21, 22, 23, 24], 26: [2, 4, 17, 18, 19, 20, 21, 22, 23, 24, 25], 27: [2, 4, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26], 28: [2, 4, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27], 29: [2, 4, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28], 30: [17, 18, 19, 20, 21, 22, 23, 24, 25], 31: [17, 18, 19, 20, 21, 22, 23, 24, 25, 30], 32: [17, 18, 19, 20, 21, 22, 23, 24, 25, 30, 31], 33: [17, 18, 19, 20, 21, 22, 23, 24, 25, 30, 31, 32], 34: [17, 18, 19, 20, 21, 22, 23, 24, 25, 30, 31, 32, 33], 35: [17, 18, 19, 20, 21, 22, 23, 24, 25, 30, 31, 32, 33, 34], 36: [17, 18, 19, 20, 21, 22, 23, 24, 25, 30, 31, 32, 33, 34, 35], 37: [17, 18, 19, 20, 21, 22, 23, 24, 25, 30, 31, 32, 33, 34, 35, 36], 38: [17, 18, 19, 20, 21, 22, 23, 24, 25, 30, 31, 32, 33, 34, 35, 36, 37], 39: [17, 18, 19, 20, 21, 22, 23, 24, 25, 30, 31, 32, 33, 34, 35, 36, 37, 38], 40: [17, 18, 19, 20, 21, 22, 23, 24, 25, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39], 41: [17, 18, 19, 20, 21, 22, 23, 24, 25, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40], 42: [17, 18, 19, 20, 21, 22, 23, 24, 25, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41], 43: [17, 18, 19, 20, 21, 22, 23, 24, 25, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42], 44: [17, 18, 19, 20, 21, 22, 23, 24, 25, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43], 45: [17, 18, 19, 20, 21, 22, 23, 24, 25, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44], 46: [2, 4, 5, 6, 7, 8, 9, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45]}
-#  => unsat
-#  <= unsat
-# safe= 302 unsafe= 530 time= 174.378204
-# 47 safe= 302 unsafe= 530 time= 165.540094
-# 24/4/2018 perf %3 with optimization on inclusion
-# #obvious= obvious= 938
-### testA.txt contient la table
-### first PB avec rules: 
-# <Or(admin(X), pcchair(X), pcmember(X), subreviewer(X)) => subject(X)>
-# <And(PaperAssignments(R), subject(X), isConflicted(X)) => And(Not(Pread(X, R)), Not(Pwrite(X, R)), Not(Pcreate(X, R)))>
-# <And(PaperReviewContent(R), pcmember(X), isEQuserID(X)) => And(Pcreate(X, R), Pwrite(X, R), Pdelete(X, R))>
-### tres bien 
-
-#### ================== avec les 46 sans la 2bis
-#  => unsat
-#  <= unsat
-# 46 safe= 922 unsafe= 488 time= 423.28515000000004
-### 46 safe= 922 unsafe= 488 time= 408.029412
-
-#### cas avec les dijucnt sur actions qui ne sont pas correctes
-#### ============= avec les 11 disjunct
-#### safe= 43 unsafe= 470 time= 80.54808999999999
-#### ============== avec les 11 sans le check
-#### safe= 43 unsafe= 470 time= 70.604839
-#### ================ 47+8+2 
-### 47+2sensibles +8 Paper* 57 safe= 241 unsafe= 535 time= 100.196482
-### 57 safe= 241 unsafe= 535 time= 96.692969
-### result in testA57.txt
-
-# #### check inclusion in the safe conditions or not 
-# S = Solver()
-# S.add(Not(table.get_safe_conditions()))
-# S.push()
-# #S.add(ForAll([X, R], And(PaperReviewContent(R), pcmember(X), isEQuserID(X)))) ### sat
-# #S.add(ForAll([X, R], And(Not(PcMember(R)), PaperReviewContent(R), pcmember(X), isEQuserID(X)))) ### sat
-# # S.add(ForAll([X, R], And(Not(PcMember(R)), PaperReviewContent(R), pcmember(X), Not(subreviewer(X)), isEQuserID(X)))) ### sat
-# S.add(ForAll([X, R], And(Not(subreviewer(X)), Not(Paper(R)), pcchair(X), admin(X), Not(PaperAssignments(R)), PaperReviewContent(R), 
-#      pcmember(X), isEQuserID(X), Pdelete(X, R), Not(PcMember(R)), Not(PcMemberInfoischairflag(R)), Not(PaperConflicts(R)), 
-#      Not(PaperReview(R)), conference(R)))) ### oui unsat 
-# print (" cas 1  " + str(S.check()))
-# # S.pop()
-# # S.add(ForAll([X, R], And(Not(pcchair(X)), PaperReviewContent(R), pcmember(X), isEQuserID(X)))) ### sat
-# # print (" cas 2  " + str(S.check()))
-# print (" time after check = " + str((clock()-start))) 
-
-# # simplif first safe condition ?
-# print(str(tactic(And(Not(And(pcmember(X), subreviewer(X))), Not(And(Paper(R), PaperSubmission(R))), Not(And(Paper(R), PaperDecision(R))),
-#             Not(And(Paper(R), PaperConflicts(R))), Not(And(Paper(R), PaperAssignments(R))), Not(And(Paper(R), PaperReview(R))),
-#             Not(And(Paper(R), PaperReviewInfo(R))), Not(And(Paper(R), PaperReviewContent(R))), 
-#             Not(And(Paper(R), PaperReviewInfoSubmission(R))), pcchair(X), Or(admin(X), pcchair(X), pcmember(X), subreviewer(X)),
-#             Not(And(PaperAssignments(R), subject(X), isConflicted(X))), And(PaperReviewContent(R), pcmember(X), isEQuserID(X)),
-#             Not(And(PaperAssignments(R), subject(X), isSubjectMeeting(X))), 
-#             Or(Pdelete(X, R), Pcreate(X, R), Pread(X, R), Pwrite(X, R)), Not(And(PcMember(R), pcmember(X), isEQuserID(X))), 
-#             Not(And(PcMemberInfoischairflag(R), pcmember(X), isEQuserID(X))), 
-#             Not(And(PaperConflicts(R), subject(X), isConflicted(X))), Not(And(PaperReview(R), subject(X), isConflicted(X))),
-#             And(conference(R), admin(X))))))
-# ### rame un des morceaux 
-# And(Not(subreviewer(X)), Not(Paper(R)), pcchair(X), admin(X), Not(PaperAssignments(R)), PaperReviewContent(R), 
-#     pcmember(X), isEQuserID(X), Pdelete(X, R), Not(PcMember(R)), Not(PcMemberInfoischairflag(R)), Not(PaperConflicts(R)), 
-#     Not(PaperReview(R)), conference(R))
-
-######## 47+A1-A6
-#  => unsat
-#  <= unsat
-# 53 safe= 43 unsafe= 517 time= 70.160953
-#### et avec seulement +A6
-###48 safe= 101 unsafe= 732 time= 86.628282
 
 #### ==================
 # CSV output
 # table.perf("sorting47")
-# table.perf("sortingMore") +2rule du debut bof
-### essai +8 papers
-#table.perf("sorting47+8") 
-#table.perf("sorting47+A1-6") 
-# table.perf("sorting47+8+2") 
+
 
 
 

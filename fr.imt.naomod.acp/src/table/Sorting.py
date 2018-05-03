@@ -33,7 +33,7 @@ class Sorting(Iterative):
         result += " ----------- Sorted -------------- \n"
         for r in self.sorted:
             result += str(r) + "\n"
-        result += " ----------- Safe -------------- \n"
+        result += " ----------- Not unsafe -------------- \n"
         for r in self.safe:
             result += str(r) + "\n"
         result += " ----------- Unsafe -------------- \n"

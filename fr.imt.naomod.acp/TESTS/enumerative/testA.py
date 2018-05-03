@@ -1,7 +1,6 @@
 # -------------------
 # 20/4/2018
 # CONTINUE A from test.tspass
-# TODO faudrait trouver 2cas de REQ good/bad
 # -------------------
 
 from Enumerative import * #@UnusedWildImport
@@ -55,14 +54,7 @@ isEQuserID = Function('isEQuserID', Subject, BoolSort())
 isConflicted = Function('isConflicted', Subject, BoolSort()) 
 isMeeting = Function('isMeeting', Subject, BoolSort()) 
 isReviewInPlace = Function('isReviewInPlace', Subject, BoolSort()) 
-
-# ------------------add disjunction rules
-# admin and others ? subreviewer et pcmember/pchair
-# table.add_rule(And(admin(X), pcchair(X)), False) 
-# table.add_rule(And(admin(X), pcmember(X)), False) 
-# table.add_rule(And(admin(X), subreviewer(X)), False) 
-# table.add_rule(And(pcchair(X), subreviewer(X)), False) 
-# table.add_rule(And(pcmember(X), subreviewer(X)), False)                           
+                     
 # ---------------- the rules = 46+1
 # (![x] ((admin(x) | pcchair(x) | pcmember (x) | subreviewer(x)) => subject(x)))
 table.add_rule(Or(admin(X), pcchair(X), pcmember(X), subreviewer(X)), subject(X)) #1
@@ -160,10 +152,10 @@ table.add_rule(And(MeetingFlag(R), pcchair(X)), And(Pread(X, R), Pwrite(X, R)))
 table.add_rule(And(MeetingFlag(R), pcmember(X)), Pread(X, R))
 
 # start = clock()
-# table.compute_table(7)
+table.compute_table(7)
 # # table.check() # !!! end < number_rules 
 # #table.checkExclu()
 # #table.checkSingleExclu()
 # print ("safe= " + str(len(table.exclusive)) + " time= " + str((clock()-start))) # +"\n" +str(table))
 
-table.perf("enumerative")
+#table.perf("enumerative")

@@ -1,0 +1,8 @@
+#### ============================= 
+### 3/5/2018
+#### Code for our IFM 2018 submission
+### a Python 3 prototype reusing the Z3py solver
+#### ============================= 
+
+### TODO how to use it ?
+### Look at example testPerson.py for example

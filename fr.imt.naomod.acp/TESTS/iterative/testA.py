@@ -1,7 +1,6 @@
 # -------------------
 # 24/4/2018
-# CONTINUE A from test.tspass
-# TODO faudrait trouver 2cas de REQ good/bad
+# CONTINUE A 
 # -------------------
 
 # Cela semble assez lent malgré tout ...
@@ -61,14 +60,7 @@ isEQuserID = Function('isEQuserID', Subject, BoolSort())
 isConflicted = Function('isConflicted', Subject, BoolSort()) 
 isMeeting = Function('isMeeting', Subject, BoolSort()) 
 isReviewInPlace = Function('isReviewInPlace', Subject, BoolSort()) 
-
-# ------------------add disjunction rules
-# ### #admin and others ? subreviewer et pcmember/pchair
-# table.add_rule(And(admin(X), pcchair(X)), False) 
-# table.add_rule(And(admin(X), pcmember(X)), False) 
-# table.add_rule(And(admin(X), subreviewer(X)), False) 
-# table.add_rule(And(pcchair(X), subreviewer(X)), False) 
-# table.add_rule(And(pcmember(X), subreviewer(X)), False)                         
+              
 # ---------------- the rules = 46+1
 # (![x] ((admin(x) | pcchair(x) | pcmember (x) | subreviewer(x)) => subject(x)))
 table.add_rule(Or(admin(X), pcchair(X), pcmember(X), subreviewer(X)), subject(X)) #1
@@ -166,8 +158,8 @@ table.add_rule(And(MeetingFlag(R), pcchair(X)), And(Pread(X, R), Pwrite(X, R)))
 table.add_rule(And(MeetingFlag(R), pcmember(X)), Pread(X, R))
 
 
-#table.compute_table(11)
-#print ("rules= " + str(len(table.correct)) + " safe= " + str(len(table.safe)) + " unsafe= " + str(len(table.unsafe)))
+table.compute_table(11)
+print ("rules= " + str(len(table.correct)) + " safe= " + str(len(table.safe)) + " unsafe= " + str(len(table.unsafe)))
 #print (str(table))
 # ### perf
-table.perf("iterative47")
+#table.perf("iterative47")

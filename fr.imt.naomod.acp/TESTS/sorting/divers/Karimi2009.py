@@ -33,16 +33,6 @@ price = Function('price', Resource, Resource, BoolSort())
 receipt = Function('rent', Agent, Agent, Resource, BoolSort()) 
 discount = Function('discount', Agent, Resource, BoolSort()) 
 
-# (![m] (Money(m) => Resource(m))) &
-# (![c] (Car(c) => Resource(c))) &
-# (![m] ~(Money(m) & Car(m))) & %%% disjoint
-# (![cre] (CarRentalEmployee(cre) => Agent(cre))) &
-# (![cu] (Customer(cu) => Agent(cu))) &
-# (![g] (GoldClub(g) => Customer(g))) &
-# (![cre,cu,m,c] ((CarRentalEmployee(cre) & Customer(cu) & ~same(cre, cu) & Money(m) & Car(c) & rentACar(cre, cu, c) & price(c, m)) => cashReceipt(cu, cre, m))) &
-# %%% P1: golden case discount : soit le reçoive soit il est déduit ...
-# (![cre,cu,m,c] ((CarRentalEmployee(cre) & GoldClub(cu) & ~same(cre, cu) & Money(m) & Car(c) & rentACar(cre, cu, c) & price(c, m)) => (cashReceipt(cu, cre, m) & discount(cre, m))))
-
 table.add_rule(money(m), resource(m))
 table.add_rule(car(c), resource(c))
 table.add_rule(And(money(m), car(m)), False)
@@ -62,5 +52,4 @@ table.compute_table(9)
 table.check()
 print ("rules= " + str(len(table.correct)) + " safe= " + str(len(table.safe)) + " unsafe= " + str(len(table.unsafe)))
 print (str(table))
-table.quine() # good example with 6 first or 9
 
