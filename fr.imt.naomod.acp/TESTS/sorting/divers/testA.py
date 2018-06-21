@@ -1,7 +1,6 @@
 # -------------------
-# 2/5/2018
-# CONTINUE A from TODP
-### examples in evaluation
+# 20/6/2018
+# CONTINUE A from test.tspass
 # -------------------
 
 from Sorting import * #@UnusedWildImport
@@ -11,6 +10,8 @@ from time import * #@UnusedWildImport
 Subject = DeclareSort('Subject')
 Resource = DeclareSort('Resource')
 
+#table = Enumerative()
+#table = Iterative()
 table = Sorting()
 # Variables
 table.add_variable("R", Resource)
@@ -61,34 +62,32 @@ isConflicted = Function('isConflicted', Subject, BoolSort())
 isMeeting = Function('isMeeting', Subject, BoolSort()) 
 isReviewInPlace = Function('isReviewInPlace', Subject, BoolSort()) 
 
+#### additionnal rules
 # # #### these two seem sensible
-# table.add_rule(pcchair(X), pcmember(X)) 
-# table.add_rule(And(pcmember(X), subreviewer(X)), False) 
-# # ------------------add disjunction rules
-# # ### #admin and others ? subreviewer et pcmember/pchair
-# # table.add_rule(And(admin(X), pcchair(X)), False) 
-# # table.add_rule(And(admin(X), pcmember(X)), False) 
-# # table.add_rule(And(admin(X), subreviewer(X)), False) 
-# # table.add_rule(And(pcchair(X), subreviewer(X)), False)        
-### exclusive actions just for showing a problem
+table.add_rule(pcchair(X), pcmember(X)) 
+table.add_rule(And(pcmember(X), subreviewer(X)), False) 
+                 
+### rule disjunction about paper
+# Paper PaperSubmission PaperDecision PaperConflicts PaperAssignments PaperReview PaperReviewInfo PaperReviewContent PaperReviewInfoSubmission
+table.add_rule(And(Paper(R), PaperSubmission(R)), False) 
+table.add_rule(And(Paper(R), PaperDecision(R)), False) 
+table.add_rule(And(Paper(R), PaperConflicts(R)), False) 
+table.add_rule(And(Paper(R), PaperAssignments(R)), False) 
+table.add_rule(And(Paper(R), PaperReview(R)), False) 
+table.add_rule(And(Paper(R), PaperReviewInfo(R)), False) 
+table.add_rule(And(Paper(R), PaperReviewContent(R)), False) 
+table.add_rule(And(Paper(R), PaperReviewInfoSubmission(R)), False) 
+
+# ### exclusive actions just for showing a problem not really sensible
 # table.add_rule(And(Pdelete(X, R), Pcreate(X, R)), False)  # A1 - A6
 # table.add_rule(And(Pdelete(X, R), Pread(X, R)), False)
 # table.add_rule(And(Pdelete(X, R), Pwrite(X, R)), False)
 # table.add_rule(And(Pcreate(X, R), Pread(X, R)), False)
 # table.add_rule(And(Pcreate(X, R), Pwrite(X, R)), False)
-# table.add_rule(And(Pread(X, R), Pwrite(X, R)), False)                       
-# ### try with these disjunction about paper
-# # Paper PaperSubmission PaperDecision PaperConflicts PaperAssignments PaperReview PaperReviewInfo PaperReviewContent PaperReviewInfoSubmission
-# table.add_rule(And(Paper(R), PaperSubmission(R)), False) 
-# table.add_rule(And(Paper(R), PaperDecision(R)), False) 
-# table.add_rule(And(Paper(R), PaperConflicts(R)), False) 
-# table.add_rule(And(Paper(R), PaperAssignments(R)), False) 
-# table.add_rule(And(Paper(R), PaperReview(R)), False) 
-# table.add_rule(And(Paper(R), PaperReviewInfo(R)), False) 
-# table.add_rule(And(Paper(R), PaperReviewContent(R)), False) 
-# table.add_rule(And(Paper(R), PaperReviewInfoSubmission(R)), False) 
+# table.add_rule(And(Pread(X, R), Pwrite(X, R)), False)   
+# ### --------    
 
-# ---------------- the rules = 46+1
+# ---------------- the rules = 47
 # (![x] ((admin(x) | pcchair(x) | pcmember (x) | subreviewer(x)) => subject(x)))
 table.add_rule(Or(admin(X), pcchair(X), pcmember(X), subreviewer(X)), subject(X)) #1
 # (![X, R] ((Pdelete(X, R) | Pcreate(X, R) | Pread(X, R) | Pwrite(X, R)) => Paction(X, R)))
@@ -183,19 +182,63 @@ table.add_rule(And(PaperReviewInfoSubmission(R), pcmember(X), isEQuserID(X), isR
 table.add_rule(And(MeetingFlag(R), pcchair(X)), And(Pread(X, R), Pwrite(X, R)))
 # (![X, R] ((MeetingFlag(R) & pcmember(X)) => Pread(X, R)))
 table.add_rule(And(MeetingFlag(R), pcmember(X)), Pread(X, R))
+#--------
+
+# # ===============
+# size = 20 #47
+# for i in range(2, size):
+#     cumul = 0
+#     for j in range(10):
+#         start = clock()
+#         table.compute_table(i)
+#         #table.check(i) # 
+#         cumul +=  floor(clock()-start)
+#     # ---
+#     #print (str(i) + " safe= " + str(len(table.safe)) + " unsafe= " + str(len(table.unsafe)) + " time= " + str(cumul/10))
+#     #print (str(i) + " time= " + str(cumul/10))
+#     print (str(cumul/10))
+# # # print (str(table))
+# # ===============
 
 start = clock()
-table.compute_table(47)
-table.check() # 
-#table.checkExclu()
-#table.checkSingleExclu()
-print (str(len(table.rules)) + " safe= " + str(len(table.safe)) + " unsafe= " + str(len(table.unsafe)) + " time= " + str((clock()-start))) 
-# print (str(table))
+size = 47+8+2 #+ 6
+table.compute_table(size)
+print ( " safe= " + str(len(table.safe)) + " unsafe= " + str(len(table.unsafe)) + " time= " + str(floor(clock()-start)))
+# # safe= 302 unsafe= 530 time= 92
+print (str(table))
+
+# #### ==============
+# ### check request undefined and check intersection with safe # sat = defined and unsat = undefined
+# exp1 = ForAll([X, R], And(Not(PcMember(R)), PaperReviewContent(R), pcmember(X), Not(subreviewer(X)), isEQuserID(X))) # sat = defined
+# exp2 = ForAll([X, R], And(Not(subreviewer(X)), Not(Paper(R)), pcchair(X), admin(X), 
+#   Not(PaperAssignments(R)), PaperReviewContent(R), pcmember(X), isEQuserID(X), 
+#   Pdelete(X, R), Not(PcMember(R)), Not(PcMemberInfoischairflag(R)), 
+#   Not(PaperConflicts(R)), Not(PaperReview(R)), conference(R)))
+# ### the first unsafe contains four conflicting cases
+# ### UNSAFE [1, 1, 1] <[Or(admin(X), pcchair(X), pcmember(X), subreviewer(X)), And(PaperAssignments(R), subject(X), isConflicted(X)), And(PaperReviewContent(R), pcmember(X), isEQuserID(X))] => False>
+# exp3 = ForAll([X, R], And(PaperAssignments(R), subject(X), isConflicted(X), PaperReviewContent(R), pcmember(X), isEQuserID(X))) # unsat = undefined
+# table.check_undefined(exp1, size) 
+# S=Solver()
+# S.add(table.get_safe())
+# S.add(exp1)
+# print (str(S.check())) 
+# table.check_undefined(exp2, size)
+# S.pop(0)
+# S.add(exp2)
+# print (str(S.check())) 
+# table.check_undefined(exp3, size)
+# S.pop(0)
+# S.add(exp3)
+# print (str(S.check())) 
 
 #### ==================
 # CSV output
 # table.perf("sorting47")
-
+# table.perf("sortingMore") +2rule du debut bof
+### essai +8 papers
+#table.perf("sorting47+8") 
+#table.perf("sorting47+A1-6") 
+# table.perf("sorting47+8+2") 
 
 
 

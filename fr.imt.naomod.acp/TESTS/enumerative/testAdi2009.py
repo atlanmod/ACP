@@ -1,5 +1,5 @@
 # -------------------
-# 16/4/2018
+# 21/6/2018
 # Test Adi2009 
 # -------------------
 from Enumerative import *#@UnusedWildImport
@@ -51,8 +51,9 @@ table.add_rule(And(nurse(h), Not(sameward(h, p))), Not(pread(h, p)))
 
 # # 
 start = time()
-table.compute_table(8)
-table.check() # 
+size = 8
+table.compute_table(size)
+table.check() # needs size
 #table.checkExclu()
 #table.checkSingleExclu()
 print ("time= " + str(time()-start))

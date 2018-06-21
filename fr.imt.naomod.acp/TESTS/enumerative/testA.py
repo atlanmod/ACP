@@ -1,5 +1,5 @@
 # -------------------
-# 20/4/2018
+# 20/6/2018
 # CONTINUE A from test.tspass
 # -------------------
 
@@ -151,11 +151,27 @@ table.add_rule(And(MeetingFlag(R), pcchair(X)), And(Pread(X, R), Pwrite(X, R)))
 # (![X, R] ((MeetingFlag(R) & pcmember(X)) => Pread(X, R)))
 table.add_rule(And(MeetingFlag(R), pcmember(X)), Pread(X, R))
 
-# start = clock()
-table.compute_table(7)
-# # table.check() # !!! end < number_rules 
-# #table.checkExclu()
-# #table.checkSingleExclu()
-# print ("safe= " + str(len(table.exclusive)) + " time= " + str((clock()-start))) # +"\n" +str(table))
-
-#table.perf("enumerative")
+# ===============
+size = 20 #47
+for i in range(2, size):
+    cumul = 0
+    for j in range(10):
+        start = clock()
+        table.compute_table(i)
+        #table.check(i) # 
+        cumul +=  floor(clock()-start)
+    # ---
+    #print (str(i) + " safe= " + str(len(table.safe)) + " unsafe= " + str(len(table.unsafe)) + " time= " + str(cumul/10))
+    #print (str(i) + " time= " + str(cumul/10))
+    print (str(cumul/10))
+# # print (str(table))
+# ===============
+# # start = clock()
+# size = 10
+# table.compute_table(size)
+# table.check() # !!! end < number_rules 
+# # #table.checkExclu()
+# # #table.checkSingleExclu()
+# # print ("safe= " + str(len(table.exclusive)) + " time= " + str((clock()-start))) # +"\n" +str(table))
+#  
+# #table.perf("enumerative")

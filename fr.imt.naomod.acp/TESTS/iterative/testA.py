@@ -158,7 +158,7 @@ table.add_rule(And(MeetingFlag(R), pcchair(X)), And(Pread(X, R), Pwrite(X, R)))
 table.add_rule(And(MeetingFlag(R), pcmember(X)), Pread(X, R))
 
 
-table.compute_table(11)
+table.compute_table(11) # rules= 11 safe= 37 unsafe= 23
 print ("rules= " + str(len(table.correct)) + " safe= " + str(len(table.safe)) + " unsafe= " + str(len(table.unsafe)))
 #print (str(table))
 # ### perf

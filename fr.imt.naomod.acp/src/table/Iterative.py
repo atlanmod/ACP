@@ -1,5 +1,5 @@
 # ------------------
-# 17/4/2018
+# 21/6/2018
 # Iterative method
 # remove obvious tautologies and separate unsafe  from safe
 # -------------------
@@ -18,9 +18,6 @@ class Iterative(Enumerative):
     # init constructor 
     def __init__(self):
         super().__init__()
-        # local solver
-        self.solver = Solver()
-        self.solver.set(timeout=1000) # 1s
         # store safe cases
         self.safe = []
         # separate unsafe cases 
@@ -274,12 +271,12 @@ class Iterative(Enumerative):
         print ("isSafe " + str(REQ) + " is " + str(self.solver.check().__eq__(unsat)))
         self.solver.reset()
     # --- end isSafe
-    
+
     # -------------------
-    # compute union of conditions
-    # this is the max defined expression
-    def get_safe_conditions(self):
-        res = list(map((lambda x: x.get_cond()), self.safe))
+    # get_safe compute the safe formula  
+    def get_safe(self):
+        res = [And(x.get_cond(), x.get_conc()) for x in self.safe]
+        #res = list(map((lambda x: x.get_cond()), self.safe))
         if (res):
             if (len(res) == 1):
                 return ForAll(self.variables, res[0])
@@ -287,28 +284,7 @@ class Iterative(Enumerative):
                 return ForAll(self.variables, Or(*res))
         else:
             return True
-    # --- end get_safe_conditions
-    
-    # ----------------------
-    # Check if REQ match at least one rule with a defined conclusion
-    # REQ & +Not get_conditions unsat AND REQ & 1-undefined is sat
-    # computation of safe(R) in IFM2018
-    # TODO ???? optimise with binary ?
-    def isDefined(self, REQ):
-        self.solver.reset()
-        self.solver.add(REQ)
-        self.solver.push() # breakpoint
-        self.solver.add(Not(self.get_safe_conditions()))
-        match = self.solver.check()
-        #print ("Solver: " + str(self.solver) + str(match))
-        self.solver.pop()
-        #print ("1-undefined= " + str(self.one_undefined()))
-        self.solver.add(ForAll(self.variables, Not(self.one_undefined())))
-        result = match.__eq__(unsat) and self.solver.check().__eq__(sat)
-        #print ("Solver: " + str(self.solver) + str(self.solver.check()))
-        self.solver.reset()
-        print ("isDefined " + str(REQ) + " is " + str(result))
-    # --- end isDefined
+    # ---- end get_safe
     
     # -------------------------
     # csv output of some tests
