@@ -1,5 +1,5 @@
 # -------------------
-# 21/6/2018
+# 22/6/2018
 # RBAC2 from http://www3.cs.stonybrook.edu/~stoller/ccs2007/
 # -------------------
 ### without simplification
@@ -236,7 +236,7 @@ table.add_rule(And(ThirdParty(T, X), revoke(T, X, Y), (P < T), assign(P, X, Y), 
 # ### ===============
 start = clock()
 size =  8+3+13+13+24 
-table.compute_table(size) 
+#table.compute_table(size) 
 #table.check(size)
 #print(str(table))
 print ("rules= " + str(len(table.correct)) + " safe= " + str(len(table.safe)) 

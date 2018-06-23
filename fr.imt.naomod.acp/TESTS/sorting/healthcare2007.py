@@ -1,13 +1,11 @@
 # -------------------
-# 21/6/2018
+# 22/6/2018
 # RBAC2 from http://www3.cs.stonybrook.edu/~stoller/ccs2007/
 # -------------------
 ### without simplification
 ### encoding revoke: similar to assign
 ### but needs to add extra condition and discrete time
 # -----------------
-
-# TODO run it
 
 from Sorting import * #@UnusedWildImport
 
@@ -243,4 +241,4 @@ print ("rules= " + str(len(table.correct)) + " safe= " + str(len(table.safe))
        + " unsafe= " + str(len(table.unsafe)) + " time: " + str(floor(clock()-start))) # + " built= " + str(table.built))
 ##table.quine()
 ## ===================
-
+# rules= 61 safe= 17085 unsafe= 4 time: 5736
