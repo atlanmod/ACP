@@ -47,7 +47,7 @@ table.add_rule(And(nurse(h), Not(sameward(h, p))), Not(pread(h, p)))
 #### =======================
 size = 5
 table.compute_table(size)
-table.check(size)
+table.check()
 print ("rules= " + str(len(table.correct)) + " safe= " + str(len(table.safe)) + " unsafe= " + str(len(table.unsafe)))
 print (str(table))
 #print (str(table.get_safe()))

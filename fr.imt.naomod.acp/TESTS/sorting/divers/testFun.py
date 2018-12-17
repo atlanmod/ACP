@@ -53,3 +53,5 @@ table.compute_table(table.number_rule())
 table.check()
 print (str(table))
 
+#  ----------- Unsafe -------------- 
+# UNSAFE [1, 0, 0, 1] <[I >= 1, Not(I == 0), Not(I == 1), I == 2] => False>

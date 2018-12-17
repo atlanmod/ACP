@@ -92,5 +92,5 @@ table.add_rule(D1, Not(P0))
 table.compute_table(3)
 table.check()
 print (str(table))
-table.quine()
+#table.quine()
 
